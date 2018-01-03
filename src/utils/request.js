@@ -32,11 +32,11 @@ export default function request(url, options) {
       'Content-Type': 'application/json; charset=utf-8',
       ...newOptions.headers,
     };
-    newOptions.body = JSON.stringify(newOptions.body);
+    newOptions.body = JSON.stringify(newOptions.body); //参数当做JSON格式传递，如需别的格式，需自己转格式
   }
   return fetch(url, newOptions)   //真正发起请求的地方
     .then(checkStatus)
     .then(parseJSON)
-    .then(data => ({ data }))
+    .then(data => ({ data }))     //此处的data里包含类型码，可根据类型码进行额外操作，比如登录验证，抛出提示等
     .catch(err => ({ err }));
 }

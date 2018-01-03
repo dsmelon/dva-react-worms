@@ -14,7 +14,7 @@ class Menu extends Component {
 		})
 	}
 	render(){
-		const {match:{path}}=this.props;
+		const {match:{path},dispatch}=this.props;
 		const routers=[
 			[`${path}`,Menu1,[import("../models/example")]],
 			[`${path}/menu2`,Menu2],
@@ -23,7 +23,7 @@ class Menu extends Component {
 			[`${path}/menu5`,Menu5],
 		];
 		return <div>
-			<div style={{display:"inline-block",textAlign:"center",verticalAlign:"middle"}}>
+			<div>
 				<div style={{margin:"20px"}}><Button type="primary" size="large" onClick={()=>this.jump(`${path}`)}>菜单一</Button></div>
 				<div style={{margin:"20px"}}><Button type="primary" size="large" onClick={()=>this.jump(`${path}/menu2`)}>菜单二</Button></div>
 				<div style={{margin:"20px"}}><Button type="primary" size="large" onClick={()=>this.jump(`${path}/menu3`)}>菜单三</Button></div>
@@ -33,6 +33,28 @@ class Menu extends Component {
 			<div style={{display:"inline-block",textAlign:"center",height:"320px",verticalAlign:"middle"}}>
 				<CreateRouter {...{routers}} />
 			</div>
+
+
+			<a onClick={()=>{//点击此按钮时，会触发takee
+				dispatch({
+					type:"example/takee"
+				})
+			}}>监听</a>
+
+
+
+			<a onClick={()=>{//点击此按钮时，出触发b
+				dispatch({
+					type:"example/b"
+				})
+			}}>bbb</a>
+
+			<a onClick={()=>{//点击此按钮时，出触发a
+				dispatch({
+					type:"example/a"
+				})
+			}}>aaa</a>
+
 		</div>
 	}
 }
