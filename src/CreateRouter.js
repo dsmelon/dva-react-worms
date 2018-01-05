@@ -12,7 +12,7 @@ function CreateRouter({routers,app}){
                                         app:APP,//用于注册model，由于之后不好获取，需要保存起来，router.js里携带app参数，之后的二级路由里无法得到app参数
                                         models:()=>value[2]||[],
                                         component:()=>value[1]
-                                    })} 
+                                    })}
                                 />
                     })
                 }

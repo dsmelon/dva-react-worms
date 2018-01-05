@@ -3,7 +3,8 @@ import { connect } from 'dva';
 import { Button } from 'antd';
 import CreateRouter from './../CreateRouter';
 import {Menu1,Menu2,Menu3,Menu4,Menu5} from './menu/';
-
+let a=10;
+var b=100;
 class Menu extends Component {
 	jump(pathname,query,isPath){
 		const {dispatch}=this.props;
@@ -41,15 +42,13 @@ class Menu extends Component {
 				})
 			}}>监听</a>
 
-
-
-			<a onClick={()=>{//点击此按钮时，出触发b
+			<a onClick={()=>{//点击此按钮时，会触发b
 				dispatch({
 					type:"example/b"
 				})
 			}}>bbb</a>
 
-			<a onClick={()=>{//点击此按钮时，出触发a
+			<a onClick={()=>{//点击此按钮时，会触发a
 				dispatch({
 					type:"example/a"
 				})

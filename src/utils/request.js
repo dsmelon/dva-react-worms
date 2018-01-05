@@ -1,4 +1,5 @@
 import fetch from 'dva/fetch';
+import {setBuffer} from './buffer/config';
 
 function parseJSON(response) {
   return response.json();
@@ -21,7 +22,7 @@ function checkStatus(response) {
  * @param  {object} [options] The options we want to pass to "fetch"
  * @return {object}           An object containing either "data" or "err"
  */
-export default function request(url, options) {
+export default function request(url, options, keyName) {
   const defaultOptions = {        //定义请求头
     credentials: 'include',
   };
@@ -37,6 +38,9 @@ export default function request(url, options) {
   return fetch(url, newOptions)   //真正发起请求的地方
     .then(checkStatus)
     .then(parseJSON)
-    .then(data => ({ data }))     //此处的data里包含类型码，可根据类型码进行额外操作，比如登录验证，抛出提示等
+    .then(data =>{
+      keyName&&setBuffer(keyName,data); //有传参则加入缓存
+      return {data};
+    })     //此处的data里包含类型码，可根据类型码进行额外操作，比如登录验证，抛出提示等
     .catch(err => ({ err }));
 }

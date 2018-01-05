@@ -1,5 +1,6 @@
 import { routerRedux } from 'dva/router';
 import request from '../utils/request';
+import {setBuffer,getBuffer} from './../utils/buffer/config';
 export default {
   namespace: 'example',
   state: {},
@@ -10,16 +11,16 @@ export default {
   },
   effects: {
 		*a({},{put}){
-				console.log("aaa");
+				console.log(getBuffer("aaa"));
 		},
 		*b({},{call}){	//运行此函数是会被刚才发起的监听检测到
 			  console.log("bbb");
-			  let bb=yield call(()=>request("www.baidu.com"));
+			  let bb=yield getBuffer("b")||call(()=>request("www.baidu.com"));
 				console.log(bb);
 		},
 		*takee({query},{put,take}){
 			console.log("开始监听");
-			let t=yield take("b");//此时发起监听，会阻断代码向下运行,当动作发起时就会被检测到
+			yield take("b");//此时发起监听，会阻断代码向下运行,当动作发起时就会被检测到
 			//检测到时继续向下执行，同时销毁监听，不在生效
 			console.log("我监听到你了");
 			//若想要一直监听，可以在此处递归，也即在此处
@@ -27,7 +28,6 @@ export default {
 		}
   },
   subscriptions: {
-
   }
 };
 

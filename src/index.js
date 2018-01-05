@@ -1,5 +1,8 @@
 import dva from 'dva';
 import createHistory from 'history/createBrowserHistory';
+import {bufferStart} from './utils/buffer/config';
+
+bufferStart();                        //启动缓存监听
 
 // 1. Initialize
 const app = dva({
