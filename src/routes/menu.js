@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Button } from 'antd';
-import CreateRouter from './../CreateRouter';
+import {CreateRouterC} from './../CreateRouter';
 import {Menu1,Menu2,Menu3,Menu4,Menu5} from './menu/';
-let a=10;
-var b=100;
+import Video from './../components/video/';
+
 class Menu extends Component {
 	jump(pathname,query,isPath){
 		const {dispatch}=this.props;
@@ -32,9 +32,10 @@ class Menu extends Component {
 				<div style={{margin:"20px"}}><Button type="primary" size="large" onClick={()=>this.jump(`${path}/menu5`)}>菜单五</Button></div>
 			</div>
 			<div style={{display:"inline-block",textAlign:"center",height:"320px",verticalAlign:"middle"}}>
-				<CreateRouter {...{routers}} />
+				<CreateRouterC {...{routers}} />
 			</div>
 
+			<Video />
 
 			<a onClick={()=>{//点击此按钮时，会触发takee
 				dispatch({

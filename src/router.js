@@ -1,4 +1,4 @@
-import CreateRouter from './CreateRouter';
+import {CreateRouterC} from './CreateRouter';
 import { Router } from 'dva/router';
 import Menu from './routes/menu';
 
@@ -10,7 +10,7 @@ function RouterConfig({history,app}){                         //仅仅此处的�
 	
 	return (
 		<Router history={history}>
-			<CreateRouter {...{routers,app}} />
+			<CreateRouterC {...{routers,app}} />
 		</Router>
 	)
 }

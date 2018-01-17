@@ -1,0 +1,37 @@
+/*此皮肤采用磷叶石配色,绿与蓝的比为8:7：#00ffd0,青八分偏绿一分，集天地造化，在八卦中呈天降祥瑞，万物复苏之势，足以见得自然界的奥妙与智慧*/
+.player *{margin:0;padding:0;box-sizing:border-box;}
+.player{width:1000px;margin:auto;-webkit-user-select:none;-webkit-user-drag:none;user-select:none;position:relative;left:0;right:0;top:0;color:#000;text-shadow:1px 1px 0 white;background-color:rgba(0,0,0,0.95)}
+.player>video{width:100%;height:100%;display:block;cursor:pointer;}
+.player>ul{display:flex;cursor:pointer;padding:4px 0;font-size:12px;width:100%;bottom:0;right:0;background-color:#efefef;z-index:3000000000;}
+.player>ul>li{flex:1;text-align:center;height:100%;padding:0 1px;white-space:nowrap;}
+.player>ul>li>a{color:inherit;text-decoration:inherit;}
+.player>ul>li>ul{background-color:#efefef;padding:6px 0 3px;position:absolute;left:0;right:0;bottom:4px;border-top-left-radius:6px;border-top-right-radius:6px;}
+.player>ul>li>ul>li{padding:2px 0;color:#000;}
+.player>ul>li>ul>li:hover{color:deeppink;}
+.player>ul>li>ul>li:active{color:#00f0d0;}
+.player>ul>li:hover{color:deeppink;}
+.player>ul>li:active{color:#00ffd0;}
+.player>ul>li:hover>div{color:deeppink;}
+.tipS{height:100%;border-radius:100px;box-shadow:0 0 10px 3px deeppink inset;position:absolute;top:0;bottom:0;}
+.tipE{height:100%;border-radius:100px;box-shadow:0 0 10px 3px #00ffd0 inset;position:absolute;top:0;bottom:0;}
+.tip{height:16px;border-radius:100px;box-shadow:0 0 10px 3px #666 inset;position:relative;}
+.dot{width:20px;height:20px;position:absolute;top:-2px;box-shadow:0 0 13px 3px #0033ea inset;border-radius:50%;border:1px solid #001478;z-index:1;background-color:white;}
+.sound{position:absolute;background-color:#efefef;width:100%;height:140px;left:0;right:0;border-top-left-radius:6px;border-top-right-radius:6px;background-color:#efefef;}
+.sTip{width:12px;height:112px;position:absolute;left:0;right:0;bottom:4px;margin:auto;box-shadow:0 0 10px 2px #666 inset;border-radius:100px;}
+.sTipC{position:absolute;height:calc(100% - 12px);left:0;right:0;top:6px;width:100%;}
+.sDot{position:absolute;height:12px;width:12px;box-shadow:0 0 10px 2px deeppink inset;border-radius:100%;left:0;right:0;background-color:white;}
+.sTipS{position:absolute;width:100%;left:0;right:0;bottom:-6px;box-shadow:0 0 10px 2px #00ffd0 inset;border-radius:100px;}
+.sNum{position:absolute;left:0;right:0;top:0;height:20px;line-height:20px;text-align:center;}
+.player>video::-webkit-media-controls{display:none;}
+.player>video::-o-media-controls{display:none;}
+.player>video::-moz-media-controls{display:none;}
+.player>video::-ms-media-controls{display:none;}
+.grow{position:absolute;top:0;left:0;padding:50px;width:100%;color:white;text-shadow:1px 1px 0 #000;font-size:20px;text-align:center;opacity:0;transition:opacity 0.5s;}
+.grow:hover{opacity:1;}
+.grow>div{display:inline-block;min-width:100px;cursor:pointer;}
+.grow>div:hover{color:#00ffd0;}
+.grow>div:active{color:deeppink;}
+
+
+
+

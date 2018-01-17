@@ -10,8 +10,7 @@ export default {
 	effects: {
 		*jump({ query={},isPath=false }, { call, put }) {        //跳转链接，isPath参数是否出现在地址栏
 			if(isPath){
-				let params=query.pathname+"?"+stringify(query.query)
-				yield put(routerRedux.push(params));
+				yield put(routerRedux.push(query.pathname+"?"+stringify(query.query)));
 				return false;
 			}
 			yield put(routerRedux.push(query));
