@@ -1,0 +1,45 @@
+{
+  "entry": "src/index.js",
+  "publicPath":"/dist/",
+  "hash":false,
+  "extraBabelPlugins":[
+    ["import", { "libraryName": "antd", "style": true }]
+  ],
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime"
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime"
+      ]
+    }
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://jsonplaceholder.typicode.com/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
+    }
+  }
+}
+
+/*
+
+"entry":"src/index.js",                                         入口文件，多页应用*.js
+"disableCSSModules":false,                                      禁用css Module,不建议设为true
+"cssModulesExclude":["/a.css","/b.less"],                       支持css Module混用
+"hash":false,                                                   使用hash文件名
+"publicPath":"/",                                               配置线上运行目录，开发环境永为"/"
+"outputPath::"./dist",                                          打包输出路径
+"extraBabelPlugins":["dva-hmr"],                                插件配置，只能添加，不能覆盖，要npm安装依赖
+"autoprefixer":{"browsers":["iOS >= 8","Android >=4"]}          自动兼容，可配运行环境，详情见browserslist
+"sass":{},                                                      支持sass，要安装node-sass和sass-loader，配置为node-sass的配置项
+"proxy":{"path":{"target":"targetPath",...}},                   配置代理，解决跨域问题
+"multipage":false,                                              是否为多页应用，如果是，会提取公共的js和css
+"env:{"development":{},"production":{}},                        额外特定环境配置，development开发环境，producton:build环境，也就是线上，不配置统一为extraBabelPlugins，只能添加，不能覆盖
+
+*/
