@@ -2,7 +2,7 @@ import dynamic from 'dva/dynamic'
 import { Route, Switch } from 'dva/router';
 let APP;
 
-function CreateRouterC({routers,app}){      //组件型路由：["path","component","models","exact"]
+function CreateRouterC(routers,app){      //组件型路由：["path","component","models","exact"]
     app&&(APP=app);
     return  <Switch>
                 {
@@ -19,7 +19,7 @@ function CreateRouterC({routers,app}){      //组件型路由：["path","compone
             </Switch>
 }
 
-function CreateRouterR({routers}){          //函数型路由：["path","component","exact"]
+function CreateRouterR(routers){          //函数型路由：["path","component","exact"]
     return  <Switch>
                 {
                     routers.map((value,key)=>{

@@ -1,0 +1,12 @@
+/* 样式初始化 */
+/* *{margin:0;padding:0;box-sizing:border-box;} */
+fieldset,img,input,button{border:none;outline-style:none;}
+ul,ol,dl{list-style:none;}
+select,input{vertical-align:middle;}
+img{border:0;}
+.clearfix:before,.clearfix:after{content:"";display:table;}
+.clearfix:after{clear:both;}
+h1,h2,h3,h4,h5,h6{text-decoration:none;font-weight:normal;font-size:100%;}
+s,i,em{font-style:normal;vertical-align:middle;}
+span{vertical-align:middle;}
+.ant-btn-primary{color:red;}

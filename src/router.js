@@ -10,7 +10,7 @@ function RouterConfig({history,app}){                         //仅仅此处的�
 	
 	return (
 		<Router history={history}>
-			<CreateRouterC {...{routers,app}} />
+			{CreateRouterC(routers,app)}
 		</Router>
 	)
 }

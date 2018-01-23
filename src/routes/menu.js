@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Button } from 'antd';
-import {CreateRouterC} from './../CreateRouter';
+import { CreateRouterC } from './../CreateRouter';
 import {Menu1,Menu2,Menu3,Menu4,Menu5} from './menu/';
 import Video from './../components/video/';
 
@@ -31,13 +31,14 @@ class Menu extends Component {
 				<div style={{margin:"20px"}}><Button type="primary" size="large" onClick={()=>this.jump(`${path}/menu4`)}>菜单四</Button></div>
 				<div style={{margin:"20px"}}><Button type="primary" size="large" onClick={()=>this.jump(`${path}/menu5`)}>菜单五</Button></div>
 			</div>
+			<Video />
 			<div style={{display:"inline-block",textAlign:"center",height:"320px",verticalAlign:"middle"}}>
-				<CreateRouterC {...{routers}} />
+				{CreateRouterC(routers)}
 			</div>
 
-			<Video />
+			
 
-			<a onClick={()=>{//点击此按钮时，会触发takee
+			{/* <a onClick={()=>{//点击此按钮时，会触发takee
 				dispatch({
 					type:"example/takee"
 				})
@@ -53,7 +54,7 @@ class Menu extends Component {
 				dispatch({
 					type:"example/a"
 				})
-			}}>aaa</a>
+			}}>aaa</a> */}
 
 		</div>
 	}
