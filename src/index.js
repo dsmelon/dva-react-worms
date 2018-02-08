@@ -1,12 +1,12 @@
 import dva from 'dva';
-import createHistory from 'history/createBrowserHistory';
+// import createHistory from 'history/createBrowserHistory';
 import {bufferStart} from './utils/buffer/config';
 
 bufferStart();                        //启动缓存监听
 
 // 1. Initialize
 const app = dva({
-  history:new createHistory(),
+  // history:new createHistory(),
   // initialState,                    //全局state,默认{}
   // onError((err,dispatch)=>{}),     //全局出错监听
   // onAction,                        //执行action时出发，可用于输出日志
